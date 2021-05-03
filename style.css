@@ -11,14 +11,17 @@ canvas {
 }
 
 button {
-  width: 6em;
+  position: relative;
+  top: -2em;
+  left: 25%;
+  width: 4em;
   padding: 0;
-  height: 6em;
+  height: 4em;
   background: greenyellow;
   border: none;
-  font-size: 1.2em;
+  font-size: 2.2em;
   color: black;
 }
 button:hover {
-  border: 5px solid blue;
+  border: 5px solid orange;
 }

@@ -11,7 +11,7 @@ function setup() {
   let cnv = createCanvas(windowWidth, windowHeight - 200);
   cnv.drop(audioFile);
   fft = new p5.FFT();
-  button = createButton('play');
+  button = createButton('▶️');
   reverb = new p5.Reverb();
 }
 
@@ -25,6 +25,8 @@ function draw() {
   text(windowText, width / 2 - 1, height / 2 + 1);
   fill('lightgreen');
   text(windowText, width / 2 - 2, height / 2 + 2);
+  fill('lightgblue');
+  text(windowText, width / 2 - 3, height / 2 + 3);
 }
 
 function audioFile(file) {
