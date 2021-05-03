@@ -5,9 +5,10 @@ let waveform = [];
 let fft;
 let button;
 let reverb;
+let windowText = 'drop track to hyperfy here';
 
 function setup() {
-  let cnv = createCanvas(windowWidth, windowHeight - 20);
+  let cnv = createCanvas(windowWidth, windowHeight - 200);
   cnv.drop(audioFile);
   fft = new p5.FFT();
   button = createButton('play');
@@ -16,12 +17,22 @@ function setup() {
 
 function draw() {
   background('blue');
+  textAlign(CENTER);
+  fill('pink');
+  textSize(60);
+  text(windowText, width / 2, height / 2);
+  fill('white');
+  text(windowText, width / 2 - 1, height / 2 + 1);
+  fill('lightgreen');
+  text(windowText, width / 2 - 2, height / 2 + 2);
 }
 
 function audioFile(file) {
+  windowText = 'hyperfying...';
   audioTrack = loadSound(file.data, () => {
     audioLoaded = true;
     console.log('loaded');
+    windowText = 'click play when ready';
 
     button.mousePressed(() => {
       playNote(audioTrack);
@@ -31,7 +42,7 @@ function audioFile(file) {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, windowHeight - 200);
 }
 
 function playNote(file) {

@@ -9,3 +9,16 @@ canvas {
   padding: 0;
   margin: 0;
 }
+
+button {
+  width: 6em;
+  padding: 0;
+  height: 6em;
+  background: greenyellow;
+  border: none;
+  font-size: 1.2em;
+  color: black;
+}
+button:hover {
+  border: 5px solid blue;
+}
