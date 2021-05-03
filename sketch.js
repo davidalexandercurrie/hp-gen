@@ -16,7 +16,15 @@ function setup() {
 }
 
 function draw() {
-  background('blue');
+  fft.analyze();
+  console.log(fft.getEnergy(20, 20000));
+  background(
+    color(
+      fft.getEnergy(6000, 8000) * 2,
+      fft.getEnergy(20, 100) * 2,
+      255 - fft.getEnergy(8000, 20000) * 2
+    )
+  );
   textAlign(CENTER);
   fill('pink');
   textSize(60);
@@ -37,6 +45,7 @@ function audioFile(file) {
     windowText = 'click play when ready';
 
     button.mousePressed(() => {
+      windowText = '';
       playNote(audioTrack);
       playNote(audioTrack);
     });
