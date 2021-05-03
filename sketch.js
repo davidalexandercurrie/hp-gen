@@ -7,7 +7,7 @@ let button;
 let reverb;
 
 function setup() {
-  let cnv = createCanvas(windowWidth, windowHeight);
+  let cnv = createCanvas(windowWidth, windowHeight - 20);
   cnv.drop(audioFile);
   fft = new p5.FFT();
   button = createButton('play');
